@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Attendance</title>
+<style>
+h2{
+ background-color:#008080;
+ text-align:centre;
+ padding:18px;
+ color:white;
+}
+</style>
+<script>
+function validateForm() {
+	  var x = document.forms["myForm"]["Year"]["Sem"]["Acad_year"].value;
+	  if (x == "") {
+	    alert("Please Fill all the Mandatory Fields");
+	    return false;
+	  }
+	}
+function validateAttend(attend_input) {
+    var error = "";
+    var stripped = attend_input.replace(/[\(\)\.\-\ ]/g, '');
+
+   if (stripped == "") {
+        error = "You didn't enter a phone number.";
+    } else if (isNaN(parseInt(stripped))) {
+        attend_input = "";
+        error = "The phone number contains illegal characters.";
+
+    } else if (!(stripped.length == 3)) {
+        attend_input = "";
+        error = "The phone number is the wrong length. Make sure you included an area code.\n";
+    }
+}
+
+</script>
+</head> 
+<body>
+ <form  method="post" autocomplete="on" name="myForm()" onsubmit="return validateForm()">
+  <center><h2>Attendance details form</h2></center>
+   <fieldset>
+    <center>
+      <table cellspacing="15px" cellpadding="8px" >
+        <th bgcolor="lightblue">Year</th>
+        <th bgcolor="lightblue">Semester</th>
+        <th bgcolor="lightblue">Academic year</th>
+        <th bgcolor="lightblue">Attendance</th>
+        <tr>
+          <td columnspan="2"><input type="number" name="Year1" min="1" max="4" required/></td>
+          <td><input type="number" name="sem1" min="1" max="8" required/></td>
+          <td><input type="text" name="acad1" placeholder="eg:2001-2002" required/></td>
+          <td><input type="number" name="attend1" step="0.1" min="0" max="100" required/></td>
+        </tr>  
+        <tr>
+          <td> </td>
+          <td><input type="number" name="sem2" min="1" max="8" required/></td>
+          <td><input type="text" name="acad2" placeholder="eg:2001-2002" required/></td>
+          <td><input type="number" name="attend2" step="0.1" min="0" max="100" required/></td>
+        </tr>  
+        
+        <tr>
+          <td columnspan="2"><input type="number" name="Year2" min="1" max="4" required/></td>
+          <td><input type="number" name="sem3" min="1" max="8" required/></td>
+          <td><input type="text" name="Acad2" placeholder="eg:2001-2002" required/></td>
+          <td><input type="number" name="attend3" step="0.1" min="0" max="100" required/></td>
+        </tr>  
+        <tr>
+          <td> </td>
+          <td><input type="number" name="sem4" min="1" max="8" required/></td>
+          <td><input type="text" name="acad2" placeholder="eg:2001-2002" required/></td>
+          <td><input type="number" name="attend4" step="0.1" min="0" max="100" required/></td>
+        </tr> 
+          
+        <tr>
+          <td columnspan="2"><input type="number" name="Year3" min="1" max="4" required/></td>
+          <td><input type="number" name="sem5" min="1" max="8" required/></td>
+          <td><input type="text" name="Acad3" placeholder="eg:2001-2002" required/></td>
+          <td><input type="number" name="attend5" step="0.1" min="0" max="100" required/></td>
+        </tr>  
+        <tr>
+          <td> </td>
+          <td><input type="number" name="sem6" min="1" max="8" required/></td>
+          <td><input type="text" name="acad3" placeholder="eg:2001-2002" required/></td>
+          <td><input type="number" name="attend6" step="0.1" min="0" max="100" required/></td>
+        </tr> 
+             
+         <tr>
+          <td columnspan="2"><input type="number" name="Year4" min="1" max="4" required/></td>
+          <td><input type="number" name="sem7" min="1" max="8" required/></td>
+          <td><input type="text" name="Acad4" placeholder="eg:2001-2002" required/></td>
+          <td><input type="number" name="attend7" step="0.1" min="0" max="100" required/></td>
+        </tr>  
+        <tr>
+          <td> </td>
+          <td><input type="number" name="sem8" min="1" max="8" required/></td>
+          <td><input type="text" name="acad4" placeholder="eg:2001-2002" required/></td>
+          <td><input type="number" name="attend8" step="0.1" min="0" max="100" required/></td>
+        </tr> 
+        <td label for="Reset"></td>
+          <td><input type="reset" value="Reset" /></td>
+          
+		  <td><input type="submit" value="Submit" /></td></tr>
+       </tr>
+           
+        
+      </table>
+    </center>
+    
+   
+ </fieldset>
+ </form>
+</body>
+</html>
